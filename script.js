@@ -1,6 +1,7 @@
 let state = {
     currentNumber : 1,
     currentOperator : null,
+    upperNum: null,
     total: null
 }
 
