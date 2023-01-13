@@ -1,5 +1,5 @@
 let state = {
-    currentNumber : null,
+    currentNumber : 1,
     currentOperator : null,
     total: null
 }
@@ -11,10 +11,16 @@ document.querySelector('#delBtn').addEventListener('click', () => {
 });
 
 document.querySelector('#clrBtn').addEventListener('click', () => {
-    let curNum = state.currentNumber.toString();
-    let curNumArr = [...curNum];
-    curNumArr.pop();
-    let rtnNum = Number(curNumArr.join(''));
-    state.currentNumber = rtnNum;
-    console.log(state.currentNumber);
+    if(state.currentNumber !== null){
+        let curNum = state.currentNumber.toString();
+        let curNumArr = [...curNum];
+        curNumArr.pop();
+        let rtnNum = Number(curNumArr.join(''));
+        state.currentNumber = rtnNum;
+        console.log(state.currentNumber);
+    }
+    else{
+        return;
+    }
+    
 })
