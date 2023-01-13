@@ -7,6 +7,7 @@ let state = {
 document.querySelector('#delBtn').addEventListener('click', () => {
     document.querySelector('#upper').textContent = '';
     document.querySelector('#lower').textContent = '';
+    state.currentNumber = null;
 });
 
 document.querySelector('#clrBtn').addEventListener('click', () => {
