@@ -104,8 +104,43 @@ function check(){
             state.currentNumber = null;
         }
         else{
-            state.currentNumber = null;
             //Do the arithmetics
+            switch(op){
+                case '+':
+                    add();
+                    break;
+                case '-':
+                    sub();
+                    break;
+                case '*':
+                    times();
+                    break;
+                case '/':
+                    dev();
+                    break;
+            }
+
+            state.currentNumber = null;
         }
     }
+}
+
+
+
+//Arithmetic functions
+function add(){
+    state.total = Number(state.total) + Number(state.currentNumber);
+    Render();
+}
+function sub(){
+    state.total = Number(state.total) - Number(state.currentNumber);
+    Render();
+}
+function times(){
+    state.total = Number(state.total) * Number(state.currentNumber);
+    Render();
+}
+function dev(){
+    state.total = Number(state.total) / Number(state.currentNumber);
+    Render();
 }
