@@ -45,8 +45,9 @@ for(let item of buttons){
             Render();
         }
         else{
-            state.currentOperator = event.target.value;
             check();
+            Render();
+            state.currentOperator = event.target.value;
             Render();
         }
     })
@@ -105,7 +106,7 @@ function check(){
         }
         else{
             //Do the arithmetics
-            switch(op){
+            switch(state.currentOperator){
                 case '+':
                     add();
                     break;
