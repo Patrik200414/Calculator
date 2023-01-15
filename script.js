@@ -13,6 +13,7 @@ document.querySelector('#delBtn').addEventListener('click', () => {
     document.querySelector('#lower').textContent = '';
     state.currentNumber = null;
     state.currentOperator = null;
+    state.total = null
 });
 
 document.querySelector('#clrBtn').addEventListener('click', () => {
@@ -45,8 +46,9 @@ for(let item of buttons){
         }
         else{
             state.currentOperator = event.target.value;
+            check();
+            Render();
         }
-        console.log(state.currentNumber);
     })
 }
 
@@ -68,16 +70,34 @@ document.querySelector('body').addEventListener('keypress', (event) => {
         else{
             state.currentNumber = event.key;
         }
+        check();
         Render();
     }
     else if(state.operators.indexOf(event.key) != -1){
         state.currentOperator = event.key;
-        console.log(state.currentOperator);
     }
 })
+
 
 
 //render
 function Render(){
     document.querySelector('#lower').textContent = state.currentNumber;
+}
+
+
+
+//Check the operator function
+function check(){
+    let op = state.currentOperator;
+    if(state.currentOperator !== null){
+        if(state.total === null){
+            state.total = state.currentNumber;
+            state.currentNumber = null;
+        }
+        else{
+            state.currentNumber = null;
+            //Do the arithmetics
+        }
+    }
 }
