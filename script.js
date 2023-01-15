@@ -70,11 +70,12 @@ document.querySelector('body').addEventListener('keypress', (event) => {
         else{
             state.currentNumber = event.key;
         }
-        check();
         Render();
     }
     else if(state.operators.indexOf(event.key) != -1){
         state.currentOperator = event.key;
+        check();
+        Render();
     }
 })
 
