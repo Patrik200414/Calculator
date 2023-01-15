@@ -84,6 +84,13 @@ document.querySelector('body').addEventListener('keypress', (event) => {
 //render
 function Render(){
     document.querySelector('#lower').textContent = state.currentNumber;
+    if(state.total !== null){
+        document.querySelector('#upper').textContent = state.total + ' ' + state.currentOperator;
+    }
+    else{
+        document.querySelector('#upper').textContent = '';
+    }
+    
 }
 
 
