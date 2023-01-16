@@ -82,6 +82,12 @@ document.querySelector('body').addEventListener('keypress', (event) => {
 })
 
 
+document.querySelector('#equal').addEventListener('click', (event) =>{
+    document.querySelector('#upper').textContent = '';
+    document.querySelector('#lower').textContent = state.total;
+})
+
+
 
 //render
 function Render(){
