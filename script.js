@@ -45,9 +45,10 @@ for(let item of buttons){
             Render();
         }
         else{
-            check();
             Render();
+            check();
             state.currentOperator = event.target.value;
+            //Removed the check function because it douest working and added this to check if the operators work add function work
             Render();
         }
     })
@@ -75,7 +76,7 @@ document.querySelector('body').addEventListener('keypress', (event) => {
     }
     else if(state.operators.indexOf(event.key) != -1){
         state.currentOperator = event.key;
-        check();
+        //Something missing
         Render();
     }
 })
@@ -98,31 +99,26 @@ function Render(){
 
 //Check the operator function
 function check(){
-    let op = state.currentOperator;
-    if(state.currentOperator !== null){
-        if(state.total === null){
-            state.total = state.currentNumber;
-            state.currentNumber = null;
+    if(state.total == null){
+        state.total = state.currentNumber;
+        state.currentNumber = null;
+    }
+    else{
+        switch(state.currentOperator){
+            case '+':
+                add();
+                break;
+            case '-':
+                sub();
+                break;
+            case '*':
+                times();
+                break;
+            case '/':
+                dev();
+                break;
         }
-        else{
-            //Do the arithmetics
-            switch(state.currentOperator){
-                case '+':
-                    add();
-                    break;
-                case '-':
-                    sub();
-                    break;
-                case '*':
-                    times();
-                    break;
-                case '/':
-                    dev();
-                    break;
-            }
-
-            state.currentNumber = null;
-        }
+        state.currentNumber = null;
     }
 }
 
