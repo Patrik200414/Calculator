@@ -78,3 +78,26 @@ body{
     color: white;
     transition: all 0.05s ease-in;
 }
+
+.screen{
+    display: flex;
+    flex-direction: column;
+}
+.upper{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 50%;
+    padding: 1% 2%;
+    font-size: 19px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.lower{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 50%;
+    padding: 1% 2%;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
