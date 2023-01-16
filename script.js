@@ -75,8 +75,9 @@ document.querySelector('body').addEventListener('keypress', (event) => {
         Render();
     }
     else if(state.operators.indexOf(event.key) != -1){
+        check();
         state.currentOperator = event.key;
-        //Something missing
+        
         Render();
     }
 })
