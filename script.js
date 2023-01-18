@@ -65,8 +65,7 @@ for(let item of buttons){
 
 /* */
 document.querySelector('body').addEventListener('keypress', (event) => {
-    
-    if(state.keys.indexOf(event.key) != -1){
+    if(state.keys.includes(event.key)){
         if(state.currentNumber !== null){
             state.currentNumber += event.key;
         }
@@ -75,12 +74,8 @@ document.querySelector('body').addEventListener('keypress', (event) => {
         }
         Render();
     }
-    else if(event.keyCode === 13){
-        check();
-        document.querySelector('#upper').textContent = '';
-        document.querySelector('#lower').textContent = state.total;
-    }
-    else if(state.operators.indexOf(event.key) != -1){
+    else if(state.operators.includes(event.key)){
+        Render();
         check();
         state.currentOperator = event.key;
         Render();
