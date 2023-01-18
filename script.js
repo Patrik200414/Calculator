@@ -4,7 +4,8 @@ let state = {
     upperNum: null,
     total: null,
     keys : [],
-    operators: []
+    operators: [],
+    eqlPressed : false
 }
 
 //delete and clear buttons
@@ -75,10 +76,16 @@ document.querySelector('body').addEventListener('keypress', (event) => {
         Render();
     }
     else if(state.operators.includes(event.key)){
-        Render();
         check();
         state.currentOperator = event.key;
         Render();
+    }
+    else if(event.keyCode === 13){
+        check();
+        Render();
+        document.querySelector('#upper').textContent = '';
+        document.querySelector('#lower').textContent = state.total;
+        
     }
 })
 
@@ -87,7 +94,6 @@ document.querySelector('#equal').addEventListener('click', (event) =>{
     document.querySelector('#upper').textContent = '';
     document.querySelector('#lower').textContent = state.total;
 })
-
 
 
 //render
