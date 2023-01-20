@@ -80,13 +80,6 @@ document.querySelector('body').addEventListener('keypress', (event) => {
         state.currentOperator = event.key;
         Render();
     }
-    else if(event.keyCode === 13){
-        check();
-        Render();
-        document.querySelector('#upper').textContent = '';
-        document.querySelector('#lower').textContent = state.total;
-        
-    }
 })
 
 
