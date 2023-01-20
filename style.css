@@ -22,6 +22,7 @@ body{
 .screen{
     width: 100%;
     height: 25%;
+    grid-template-rows: minmax(120px, auto);
     background-color: aquamarine;
 }
 .button-container{
@@ -91,6 +92,8 @@ body{
     padding: 1% 2%;
     font-size: 19px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 .lower{
     display: flex;
@@ -100,4 +103,6 @@ body{
     padding: 1% 2%;
     font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    word-wrap: break-word;
+    word-break: break-all;
 }
